@@ -12,7 +12,7 @@ import="
 
 <body>
 <center><h1><font color='blue'>Book Store</font></h1></center>
-<center><a href="">Login</a></center><br/>
+<center><a href="login.jsp">Login</a></center><br/>
 <center><a href="subscribe.jsp">Subscribe</a></center>
 
 <table>
