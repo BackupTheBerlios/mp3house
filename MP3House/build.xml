@@ -41,7 +41,7 @@
     
     <!-- Create Java Help Pages -->
     <target name="javahelp" depends="init" description="Generates the JavaHelp jar file of GooseGet">
-    	<jar jarfile="${basedir}/lib/GooseGetHelp.jar" basedir="${basedir}/doc/javahelp"/>    
+    	<jar jarfile="${basedir}/lib/GooseGetHelp.jar" basedir="${docs.home}/javahelp"/>    
     </target>
     
     <!-- Compile -->
@@ -51,7 +51,7 @@
     		<classpath refid="compile.classpath"/>
     	</javac>
     	<!-- compile the classes and make a jar file -->
-    	<jar jarfile="${basedir}/lib/GG.jar" basedir="${basedir}/bin"/>    	
+    	<jar jarfile="${basedir}/lib/GG.jar" basedir="${basedir}/build"/>    	
     </target>
     
     <!-- Create MP3House Distribution -->
@@ -73,7 +73,7 @@
     		<fileset dir="${basedir}/conf"></fileset>
     	</copy>
     	
-    	<copy file="GGRun.bat" todir="${dist.home}"/>
+    	<copy file="${basedir}/bin/GGRun.bat" todir="${dist.home}"/>
     	
     	<jar jarfile="${dist.home}/lib/GG-src.jar" basedir="${basedir}/src"/>
     	
