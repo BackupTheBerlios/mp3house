@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="MP3House" basedir="." default="all">
+
+	<description>
+		Build file for the MP3House
+	</description>
+
+    <target name="init">
+        <property file="build.properties"/>
+        <property name="dist.home" value="${basedir}/dist"/>
+        <property name="docs.home" value="${basedir}/docs"/>
+        <property name="src.home" value="${basedir}/src"/>
+                        
+        <property name="compile.debug" value="true"/>
+        <property name="compile.deprecation" value="false"/>
+        <property name="compile.optimize" value="true"/>
+        
+        <path id="compile.classpath">
+            <fileset dir="${basedir}/lib">
+                <include name="*.jar"/>
+            </fileset>
+        </path>        
+    </target>
+    
+    <!-- Default option -->
+    <target name="all" depends="clean,dist" description="Clean build and dist directories, then compile"/>
+    
+    <!-- Deletes distribution directory -->    
+    <target name="clean" depends="init" description="Delete old build and dist directories">
+    	<delete dir="${dist.home}"/>
+    </target>
+    
+    <!-- Create Java API docs -->                
+    <target name="javadoc" depends="init" description="Create Javadoc API documentation">
+        <mkdir dir="${docs.home}/apidocs"/>
+        <javadoc sourcepath="${src.home}" destdir="${docs.home}/apidocs" packagenames="*">
+            <classpath refid="compile.classpath"/>
+        </javadoc>
+    </target>
+    
+    <!-- Create Java Help Pages -->
+    <target name="javahelp" depends="init" description="Generates the JavaHelp jar file of GooseGet">
+    	<jar jarfile="${basedir}/lib/GooseGetHelp.jar" basedir="${basedir}/doc/javahelp"/>    
+    </target>
+    
+    <!-- Compile -->
+    <target name="compile" depends="init" description="Compiles the source">
+    	<mkdir dir="${basedir}/build"/>
+    	<javac srcdir="${src.home}" destdir="${basedir}/build" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}">
+    		<classpath refid="compile.classpath"/>
+    	</javac>
+    	<!-- compile the classes and make a jar file -->
+    	<jar jarfile="${basedir}/lib/GG.jar" basedir="${basedir}/bin"/>    	
+    </target>
+    
+    <!-- Create MP3House Distribution -->
+    <target name="dist" depends="clean,init,compile,javadoc" description="Create binary distribution">
+    	<mkdir dir="${dist.home}"/>
+    	
+    	<mkdir dir="${dist.home}/lib"/>
+    	<copy todir="${dist.home}/lib">
+    		<fileset dir="${basedir}/lib"></fileset>
+    	</copy>
+    	
+    	<mkdir dir="${dist.home}/docs"/>
+    	<copy todir="${dist.home}/docs">
+    		<fileset dir="${basedir}/docs"></fileset>
+    	</copy>
+    	
+    	<mkdir dir="${dist.home}/conf"/>
+    	<copy todir="${dist.home}/conf">
+    		<fileset dir="${basedir}/conf"></fileset>
+    	</copy>
+    	
+    	<copy file="GGRun.bat" todir="${dist.home}"/>
+    	
+    	<jar jarfile="${dist.home}/lib/GG-src.jar" basedir="${basedir}/src"/>
+    	
+    </target>
+    
+    <target name="snapshot" description="Makes a complete snapshot of MP3House dev dir">
+    	<tstamp/>
+    	<zip destfile="Q:\MP3House\MP3House-${DSTAMP}-${TSTAMP}.zip" 
+    		basedir="${basedir}"/>
+    </target>
+
+</project>

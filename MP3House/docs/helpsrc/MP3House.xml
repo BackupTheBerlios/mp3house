@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" 
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+	<!ENTITY Introduction SYSTEM "Introduction.xml">
+	<!ENTITY Metadata SYSTEM "Metadata.xml">
+]>
+<book>
+	<bookinfo>
+		<title>MP3House</title>
+		<author>
+			<firstname>Vijaya K</firstname>
+			<surname>Dasari</surname>
+			<email>vkdasari@users.sourceforge.net</email>
+		</author>
+		<author>
+			<firstname>Supriya K</firstname>
+			<surname>Shyamal</surname>
+		</author>		
+	</bookinfo>
+	<part>
+		<title>Users Guide</title>
+		&Introduction;
+	</part>
+</book>
