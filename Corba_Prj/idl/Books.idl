@@ -1,0 +1,12 @@
+module Books{
+	interface Book {
+		long getID();
+		string getTitle();
+		string getISBN();
+		float getCost();
+		
+	};
+	interface BookManager {
+		Book getBook(in long id);
+	};
+};

@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Corba Test" basedir="." default="all">
 	
-	<target name="run IREP (myirep)" depends="init">
-		<exec executable="${vb.bin}/irep.exe" os="Windows XP">
-			<arg line="myirep ${basedir}/idl/Bank.idl"/>
-		</exec>		
-	</target>
-	
-	<target name="runServer" depends="init">
-		<exec executable="${vb.bin}/vbj.exe" os="Windows XP">
-			<arg line="-VBJclasspath ${build.dir} Server"/>
-		</exec>		
-	</target>
-	
-	<target name="runClient" depends="init">
-		<exec executable="${vb.bin}/vbj.exe" os="Windows XP">
-			<arg line="-VBJclasspath ${build.dir} Client"/>
-		</exec>		
-	</target>
-	
     <target name="init">
         <property file="build.properties"/>
         <property name="ejb.home" value="${basedir}/dist"/>
         <property name="web.home" value="${basedir}/help"/>
         <property name="src.home" value="${basedir}/src"/>
     	<property name="build.dir" value="${basedir}\bin"/>
+    	<property name="lib.dir" value="${basedir}/lib"/>
     	
     	<property name="vb.home" value="C:\BDPVB"/>
     	<property name="vb.bin" value="C:\BDPVB\bin"/>
@@ -66,5 +49,36 @@
 	</target>
 	
 	<target name="all" description="Clean build and dist directories, then compile"/>
+	
+	<target name="run IREP (myirep)" depends="init">
+		<exec executable="${vb.bin}/irep.exe" os="Windows XP">
+			<arg line="myirep ${basedir}/idl/Bank.idl"/>
+		</exec>		
+	</target>
+	
+	<target name="runBankServer" depends="init">
+		<exec executable="${vb.bin}/vbj.exe" os="Windows XP">
+			<arg line="-VBJclasspath ${build.dir} Server"/>
+		</exec>		
+	</target>
+	
+	<target name="runBankClient" depends="init">
+		<exec executable="${vb.bin}/vbj.exe" os="Windows XP">
+			<arg line="-VBJclasspath ${build.dir} Client"/>
+		</exec>		
+	</target>
+
+	<target name="runBookServer" depends="init">
+		<exec executable="${vb.bin}/vbj.exe" os="Windows XP">
+			<arg line="-VBJclasspath ${build.dir};${lib.dir}/mysql.jar BookServer"/>
+		</exec>		
+	</target>
+	
+	<target name="runBookClient" depends="init">
+		<exec executable="${vb.bin}/vbj.exe" os="Windows XP">
+			<arg line="-VBJclasspath ${build.dir} BookClient"/>
+		</exec>		
+	</target>
+
 	
 </project>
