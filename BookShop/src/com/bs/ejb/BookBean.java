@@ -9,7 +9,6 @@ package com.bs.ejb;
 import java.rmi.RemoteException;
 import java.sql.ResultSet;
 import java.util.Collection;
-import java.util.Iterator;
 
 import javax.ejb.CreateException;
 import javax.ejb.EJBException;
