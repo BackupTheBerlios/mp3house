@@ -1,0 +1,446 @@
+body,center,li,ul,dt,p,div,a,form,b,br,table,td,tr,i,tt,img,input,select
+{font-size:10pt;font-family:sans-serif;text-decoration:none}
+
+body{margin:0pt}
+
+hr{border-width:1pt; border-color:#FFFFFF}
+
+a:link {text-decoration:none; color:#003366; }
+a:visited {text-decoration:none; color:#003366; }
+a:hover{ text-decoration:underline; color:#FF6600}
+a:active{ text-decoration:underline; }
+
+#default{font: 11pt sans-serif; text-decoration:none}
+#error{font: bold 11pt sans-serif; color:#DD0000}
+
+
+.default{font: 11pt sans-serif; text-decoration:none}
+.error{font: bold 11pt sans-serif; color:#DD0000}
+
+
+.tita {
+font-family: sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 11pt;
+}
+
+.al {
+font-family: Verdana, serif;
+font-style: normal;
+font-weight: 400;
+font-size: 10pt;
+color:#003366;
+}
+
+.avl {
+text-decoration: none ;
+color: rgb(255,0,0);
+}
+
+.aal {
+text-decoration: none ;
+color: rgb(0,255,0);
+}
+
+.rsbc {
+font-family: sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 8pt;
+color: rgb(0,0,0);
+background-color: rgb(226,239,249);
+}
+
+.rsbh {
+font-family: Verdana, sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 10pt;
+text-align: left;
+color: rgb(255,255,255);
+background-color: rgb(121,164,196);
+}
+
+.tnv {
+font-family: verdana, arial, serif-serif;
+font-style: bold;
+font-size: 8pt;
+color: rgb(0,0,0);
+
+height: 10px;
+background-color: rgb(226,239,249);
+}
+
+.tnva {
+font-family: verdana, arial, serif-serif;
+font-style: bold;
+font-size: 8pt;
+border:0px;
+color: rgb(0,0,0);
+height: 10px;
+background-color:C0C0C0;  
+}
+
+.snv {
+font-family: Verdana, serif;
+font-style: normal;
+font-weight: 400;
+font-size: 10pt;
+color: rgb(0,0,0);
+background-color: rgb(226,239,249);
+}
+
+.snvr {
+font-family: Verdana, serif;
+font-style: normal;
+font-weight: 400;
+font-size: 10pt;
+color: rgb(0,0,0);
+background-color: rgb(255,255,255);
+}
+
+.snvh {
+font-family: Verdana, sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 11pt;
+text-align: left;
+color: rgb(255,255,255);
+background-color: rgb(0,51,102);
+}
+
+
+.mnv {
+font-family: Verdana, serif;
+font-style: normal;
+font-weight: 400;
+font-size: 10pt;
+color: rgb(0,0,0);
+background-color: rgb(121,164,196);
+}
+
+.z  {
+	font-size: 6pt;
+	font-family: sans-serif;
+}
+.zb {
+	font-weight: bold;
+	font-size: 6pt;
+	font-family: sans-serif;
+}
+.zi {
+	font-style: italic     
+	font-size: 6pt;
+	font-family: sans-serif;
+}
+.zbi{
+	font-weight: bold;
+	font-style: italic; 
+	font-size: 6pt; 
+	font-family: sans-serif;}
+}
+.y  {
+	font-size: 7pt;
+	font-family: sans-serif;
+}
+.yb {
+	font-weight: bold;
+	font-size: 7pt;
+	font-family: sans-serif;
+}
+.yi {
+	font-style: italic     
+	font-size: 7pt;
+	font-family: sans-serif;
+}
+.ybi{
+	font-weight: bold;
+	font-style: italic; 
+	font-size: 7pt; 
+	font-family: sans-serif;}
+}
+
+
+.a  {
+	font-size: 8pt;
+	font-family: sans-serif;
+}
+.ab {
+	font-weight: bold;
+	font-size: 8pt;
+	font-family: sans-serif;
+}
+.ai {
+	font-style: italic     
+	font-size: 8pt;
+	font-family: sans-serif;
+}
+.abi{
+	font-weight: bold;
+	font-style: italic; 
+	font-size: 8pt; 
+	font-family: sans-serif;}
+}
+
+.b  {
+	font-size: 9pt;
+	font-family: sans-serif;
+}
+.bb {
+	font-weight: bold;
+	font-size: 9pt;
+	font-family: sans-serif;
+}
+.bc  {
+	font-size: 9pt;
+	font-family: sans-serif;
+      background-color: rgb(226,239,249);
+}
+.bi {    
+	font-weight: italic;
+	font-size: 9pt;
+	font-family: sans-serif;
+	}
+.bbi{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 9pt;
+	font-family: sans-serif;
+}
+
+.c  {
+	font-size: 10pt; 
+	font-family: sans-serif;
+}
+.cb {
+	font-weight: bold;
+	font-size: 10pt; 
+	font-family: sans-serif;
+}
+.ci {
+	font-style: italic;
+	font-size: 10pt;
+	font-family: sans-serif;
+}
+.cbi{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 10pt;
+	font-family: sans-serif;
+}
+
+.d  {
+	font-size: 11pt;
+	font-family; sans-serif;
+}
+.db {
+	font-weight: bold;
+	font-size: 11pt; 
+	font-family: sans-serif;
+}
+.di {
+	font-style: italic;
+	font-size: 11pt;
+	font-family: sans-serif;
+}
+.dbi{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 11pt;
+	font-family: sans-serif;
+}
+
+.e  {
+	font-size: 12pt;
+	font-family: sans-serif;
+}
+.eb {
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: sans-serif;
+}
+.ei {
+	font-weight: italic;
+	font-size: 12pt;
+	font-family: sans-serif;
+}
+.ebi{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 12pt;
+	font-family: sans-serif;
+}
+
+.f  {
+	font-size: 13pt;
+	font-family: sans-serif;
+}
+.fb {
+	font-weight: bold;
+	font-size: 13pt;
+	font-family: sans-serif;
+}
+.fi {
+	font-style: italic;
+	font-size: 13pt;
+	font-family: sans-serif;
+}
+.fbi{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 13pt;
+	font-family: sans-serif;
+}
+
+.g  {
+	font-size: 14pt;
+	font-family: sans-serif;
+}
+.gb {
+	font-weight: bold;
+	font-size: 14pt;
+	font-family: sans-serif;
+}
+.gi {
+	font-weight: italic;
+	font-size: 14pt;
+	font-family: sans-serif;
+}
+.gbi{
+	font: bold;
+	font-style: italic;
+	font-size: 14pt;
+	font-family: sans-serif;
+}
+
+.btnsb {
+		font-family:verdana,arial,helvetica;
+		font-size:10px;
+		font-weight:bold;
+		background: #EEEEEE;
+		cursor: hand;
+		border-bottom: 1px solid #000000;
+		border-right: 1px solid #000000;
+		border-left: 1px solid #000000;
+		border-top: 1px solid #000000;
+		}
+
+.btns {
+		font-family:verdana,arial,helvetica;
+		font-size:10px;background: #EEEEEE;
+		cursor: hand;
+		border-bottom: 1px solid #000000;
+		border-right: 1px solid #000000;
+		border-left: 1px solid #000000;
+		border-top: 1px solid #000000;
+		}
+
+.btnsRelVal {
+		font-family:verdana,arial,helvetica;
+		font-size:10px;background: #7CA6A6;
+		cursor: hand;
+		border-bottom: 1px solid #000000;
+		border-right: 1px solid #000000;
+		border-left: 1px solid #000000;
+		border-top: 1px solid #000000;
+		}
+
+.btnsyb {
+		font-family:verdana,arial,helvetica;
+		font-size:10px;background: #7CA6A6;
+		cursor: hand;
+		width: 180px;
+		border-bottom: 1px outset #C8DCEC;
+		border-right: 1px outset #C8DCEC;
+		border-left: 1px outset #C8DCEC;
+		border-top: 1px outset #C8DCEC;
+}
+
+.btnsybl {
+		font-family:verdana,arial,helvetica;
+		font-size:10px;background: #FFFFFF;
+		cursor: hand;
+		width: 220px;
+		border-bottom: 0px outset #C8DCEC;
+		border-right: 0px outset #C8DCEC;
+		border-left: 0px outset #C8DCEC;
+		border-top: 0px outset #C8DCEC;
+}
+
+.btnsg {font-family:verdana,arial,helvetica; font-size:12px;}
+
+td.topline      {font-size: 1px}
+td.tab          {
+    border-top: 1px solid #999;
+    border-right: 1px solid #666;
+    border-left: 1px solid #999;
+    border-bottom: none;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+table.tabs      {
+    border-top: 1px solid #999999;
+    border-right: 1px solid #999999;
+    border-left: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+
+table.tabs1 {
+    border-top: 2px solid #E2EFF9;
+    border-right: 2px solid #E2EFF9;
+    border-left: 2px solid #E2EFF9;
+    border-bottom: 2px solid #E2EFF9;
+
+}
+
+.branch{
+   cursor: pointer;
+   cursor: hand;
+   display: block;
+}
+.leaf{
+   display: none;
+   margin-left: 16px;
+}
+a{
+   text-decoration: none;
+}
+a:hover{
+   text-decoration: underline;
+}
+
+
+.ybbutton{
+	border-style: none;
+	border-color: #C8DCEC;
+	background-color: #E2EFF9;
+	text-decoration: none;
+	width: 100px;
+	text-align: center;
+}
+
+.ybbuttona{
+	border-style: none;
+	border-color: #C8DCEC;
+	background-color: #E2EFF9;
+	text-decoration: none;
+	width: 120px;
+	text-align: center;
+}
+
+a.buttontext {
+	color: white;
+	text-decoration: none;
+	cursor: hand;
+}
+
+.buttonover {
+	color: yellow;
+	text-decoration: none;
+	font: bold 12pt Verdana;
+	cursor: hand;
+}
+
+
