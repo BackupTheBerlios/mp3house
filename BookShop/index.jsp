@@ -7,32 +7,10 @@ import="
 	com.bs.common.DBUtil
 	" 
 %>
-<html>
-<head><title>Book Store</title></head>
-
-<body>
-<center><h1><font color='blue'>Book Store</font></h1></center>
-<center><a href="login.jsp">Login</a></center><br/>
-<center><a href="subscribe.jsp">Subscribe</a></center>
-
-<table>
-<%! 
-	ResultSet rs = null;
-	String show;
-%>
-
-<%
-Connection con = DBUtil.getConnection();
-Statement stmt = con.createStatement();
-ResultSet rs = stmt.executeQuery("select * from books");
-while(rs.next()){
-%>
-<tr><td>
-<%= rs.getString("title") %>
-</td></tr>
-<% } %>
-</table>
-</body>
+<jsp:include page="header.jsp">
+	<jsp:param name="pagetitle" value="Book Store for Dummies"/>
+	<jsp:param name="subtitle" value="Home"/>
+</jsp:include>
 
 
-</html>
+<jsp:include page="footer.jsp"/>

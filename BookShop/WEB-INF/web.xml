@@ -20,35 +20,51 @@
 		</init-param>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
-	
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.bs.servlets.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.bs.servlets.LogoutServlet</servlet-class>
+	</servlet>
+		
 	<servlet-mapping>
 		<servlet-name>action</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-	
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>LogoutServlet</url-pattern>
+	</servlet-mapping>
+		
 	<taglib>
 		<taglib-uri>/bean</taglib-uri>
 		<taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
 	</taglib>
-
 	<taglib>
 		<taglib-uri>/tiles</taglib-uri>
 		<taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
 	</taglib>
-
 	<taglib>
 		<taglib-uri>/html</taglib-uri>
 		<taglib-location>/WEB-INF/struts-html.tld</taglib-location>
 	</taglib>
-		
 	<taglib>
 		<taglib-uri>/logic</taglib-uri>
 		<taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
 	</taglib>
-	
 	<taglib>
 		<taglib-uri>/template</taglib-uri>
 		<taglib-location>/WEB-INF/struts-template.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/mytags</taglib-uri>
+		<taglib-location>/WEB-INF/mytags.tld</taglib-location>
 	</taglib>
 	
 	<ejb-ref>
