@@ -91,4 +91,8 @@ public class SubscribeForm extends org.apache.struts.action.ActionForm {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+	
+	public void reset(ActionMapping mapping, HttpServletRequest req){
+		userName = pass1 = pass2 = fullName = email = null;
+	}
 }

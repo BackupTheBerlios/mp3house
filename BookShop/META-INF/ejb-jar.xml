@@ -28,25 +28,55 @@
 			<cmp-field><field-name>password</field-name></cmp-field>
 			<cmp-field><field-name>email</field-name></cmp-field>
 			<primkey-field>id</primkey-field>
-			<!--
-			<ejb-ref>
-				<ejb-ref-name>UsersRemoteHome</ejb-ref-name>
-				<ejb-ref-type>Entity</ejb-ref-type>
-				<home>com.bs.ejb.UsersRemoteHome</home>
-				<remote>com.bs.ejb.UsersRemote</remote>
-				<ejb-link>UsersBean</ejb-link>
-			</ejb-ref>
 			
-			<ejb-local-ref>
-				<ejb-ref-name>UsersLocalHome</ejb-ref-name>
-				<ejb-ref-type>Entity</ejb-ref-type>
-				<local-home>com.bs.ejb.UsersLocalHome</local-home>
-				<local>com.bs.ejb.UsersLocal</local>
-				<ejb-link>UsersBean</ejb-link>
-			</ejb-local-ref>
-			-->
 		</entity>
 		
+		<entity>
+			
+			<ejb-name>BookBean</ejb-name>
+			
+			<home>com.bs.ejb.BookRemoteHome</home>
+			<remote>com.bs.ejb.BookRemote</remote>
+			<local-home>com.bs.ejb.BookLocalHome</local-home>
+			<local>com.bs.ejb.BookLocal</local>
+			
+			<ejb-class>com.bs.ejb.BookBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			
+			<abstract-schema-name>books</abstract-schema-name>
+			<cmp-field><field-name>id</field-name></cmp-field>
+			<cmp-field><field-name>title</field-name></cmp-field>
+			<cmp-field><field-name>isbn</field-name></cmp-field>
+			<cmp-field><field-name>cost</field-name></cmp-field>
+			<primkey-field>id</primkey-field>
+			
+			<query>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+						
+					</method-params>
+				</query-method>
+				<ejb-ql>
+					SELECT OBJECT(b) FROM books b
+				</ejb-ql>
+			</query>
+			
+			<query>
+				<query-method>
+					<method-name>ejbSelectAll</method-name>
+					<method-params/>
+				</query-method>
+				<ejb-ql>
+					SELECT b.id, b.title, b.isbn, b.cost FROM books b
+				</ejb-ql>
+			</query>
+			
+		</entity>
+				
 	</enterprise-beans>
 
 	<!--

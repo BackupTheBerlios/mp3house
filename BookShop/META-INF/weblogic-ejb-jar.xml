@@ -83,11 +83,96 @@
 		-->
 		<jndi-name>ejb/jUsersRemoteHome</jndi-name>
 		<local-jndi-name>ejb/jUsersLocalHome</local-jndi-name>
-
+		
 		<!--
 		<local-jndi-name></local-jndi-name>
 		<dispatch-policy></dispatch-policy>
 		-->
 	</weblogic-enterprise-bean>
 	
+	<weblogic-enterprise-bean>
+		<ejb-name>BookBean</ejb-name>
+		<entity-descriptor>
+			<pool>
+				<max-beans-in-free-pool>10</max-beans-in-free-pool>
+				<initial-beans-in-free-pool>2</initial-beans-in-free-pool>
+			</pool>
+			<entity-cache>
+				<max-beans-in-cache>1000</max-beans-in-cache>
+				<idle-timeout-seconds>600</idle-timeout-seconds>
+				<read-timeout-seconds>600</read-timeout-seconds>
+				<concurrency-strategy>Database</concurrency-strategy>
+				<cache-between-transactions>true</cache-between-transactions>
+			</entity-cache>
+			<persistence>
+				<!-- <is-modified-method-name></is-modified-method-name>
+				<delay-updates-until-end-of-tx>True</delay-updates-until-end-of-tx> -->
+				<!-- <finders-load-bean></finders-load-bean> -->
+				<persistence-use>
+					<!--
+					<type-identifier>WebLogic_CMP_JDBC</type-identifier>
+					<type-version>1.3.2</type-version>
+					<type-storage>META-INF/weblogic-cmp-jar.xml</type-storage>
+					-->
+					<type-identifier>WebLogic_CMP_RDBMS</type-identifier>
+					<type-version>6.0</type-version>
+					<type-storage>META-INF/weblogic-cmp-jar.xml</type-storage>					
+				</persistence-use>
+			</persistence>
+			<entity-clustering>
+				<home-is-clusterable>true</home-is-clusterable>
+				<!-- <home-load-algorithm></home-load-algorithm> -->
+				<!-- <home-call-router-class-name></home-call-router-class-name> -->
+				<use-serverside-stubs>false</use-serverside-stubs>
+			</entity-clustering>
+			<!--
+			<invalidation-target>
+				<ejb-name></ejb-name>
+			</invalidation-target>
+			-->
+			<enable-dynamic-queries>False</enable-dynamic-queries>
+		</entity-descriptor>
+		<!--
+		<transaction-descriptor>
+			<trans-timeout-seconds></trans-timeout-seconds>
+		</transaction-descriptor>
+		<iiop-security-descriptor>
+			
+		</iiop-security-descriptor>
+		-->
+		<reference-descriptor>
+			<!--
+			<resource-description></resource-description>
+			<resource-env-description></resource-env-description>
+			-->
+			<!--
+			<ejb-reference-description>
+				<ejb-ref-name>UsersRemoteHome</ejb-ref-name>
+				<jndi-name>UsersRemoteHome</jndi-name>
+			</ejb-reference-description>
+			
+			<ejb-local-reference-description>
+				<ejb-ref-name>UsersLocalHome</ejb-ref-name>
+				<jndi-name>UsersLocalHome</jndi-name>
+			</ejb-local-reference-description>
+			-->
+		</reference-descriptor>
+		<!--
+		<enable-call-by-reference>False</enable-call-by-reference>
+		<clients-on-same-server>False</clients-on-same-server>
+		-->
+		<run-as-principal-name>Vijay</run-as-principal-name>
+		<!--
+		<create-as-principal-name></create-as-principal-name>
+		<remove-as-principal-name></remove-as-principal-name>
+		<passivate-as-principal-name></passivate-as-principal-name>
+		-->
+		<jndi-name>ejb/jBookRemoteHome</jndi-name>
+		<local-jndi-name>ejb/jBookLocalHome</local-jndi-name>
+		
+		<!--
+		<local-jndi-name></local-jndi-name>
+		<dispatch-policy></dispatch-policy>
+		-->
+	</weblogic-enterprise-bean>
 </weblogic-ejb-jar>

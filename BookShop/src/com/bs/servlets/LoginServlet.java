@@ -6,6 +6,7 @@
  */
 package com.bs.servlets;
 
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -26,6 +27,7 @@ public class LoginServlet extends HttpServlet{
 		req.getSession(true).setAttribute("uname",
 				req.getParameter("username"));
 		log((String) req.getParameter("username"));
+		log(req.getSession().getId());
 		RequestDispatcher rp = 
 			getServletContext().getRequestDispatcher("/index.jsp");
 		rp.forward(req, res);

@@ -3,6 +3,24 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
+	<filter>
+		<filter-name>AuthFilter</filter-name>
+		<filter-class>com.bs.filters.AuthenticationFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>LoggingFilter</filter-name>
+		<filter-class>com.bs.filters.LoggingFilter</filter-class>
+	</filter>
+		
+	<filter-mapping>
+		<filter-name>AuthFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LoggingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	
 	<!-- Struts Configuration Information -->	
 	<servlet>
@@ -28,6 +46,14 @@
 		<servlet-name>LogoutServlet</servlet-name>
 		<servlet-class>com.bs.servlets.LogoutServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>com.bs.servlets.UploadServlet</servlet-class>
+		<init-param>
+			<param-name>filedir</param-name>
+			<param-value>C:\software\specs</param-value>
+		</init-param>
+	</servlet>
 		
 	<servlet-mapping>
 		<servlet-name>action</servlet-name>
@@ -41,7 +67,36 @@
 		<servlet-name>LogoutServlet</servlet-name>
 		<url-pattern>LogoutServlet</url-pattern>
 	</servlet-mapping>
-		
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>UploadServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>All</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>POST</http-method>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>testrole</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>DIGEST</auth-method>
+	</login-config>
+	
+	<security-role>
+		<role-name>testrole</role-name>
+	</security-role>
+	-->
+	
 	<taglib>
 		<taglib-uri>/bean</taglib-uri>
 		<taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
@@ -74,5 +129,14 @@
 		<remote>com.bs.ejb.UsersRemote</remote>
 		<!-- <ejb-link>com.bs.ejb.UsersBean</ejb-link> -->
 	</ejb-ref>
+	
+	<ejb-ref>
+		<ejb-ref-name>ejb/Books</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<home>com.bs.ejb.BookRemoteHome</home>
+		<remote>com.bs.ejb.BookRemote</remote>
+		<!-- <ejb-link>com.bs.ejb.UsersBean</ejb-link> -->
+	</ejb-ref>
+	
 	
 </web-app>

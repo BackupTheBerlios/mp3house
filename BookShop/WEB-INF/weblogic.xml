@@ -8,5 +8,9 @@
 			<ejb-ref-name>ejb/Users</ejb-ref-name>
 			<jndi-name>ejb/jUsersRemoteHome</jndi-name>
 		</ejb-reference-description>
+		<ejb-reference-description>
+			<ejb-ref-name>ejb/Books</ejb-ref-name>
+			<jndi-name>ejb/jBookRemoteHome</jndi-name>
+		</ejb-reference-description>
 	</reference-descriptor>
 </weblogic-web-app>

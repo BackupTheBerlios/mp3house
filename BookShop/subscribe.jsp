@@ -1,10 +1,17 @@
-<%@ page language="java" errorPage="error.jsp" %>
-<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
-<html>
-<head>
-<title>Subscribe</title>
-</head>
-<body bgcolor="#FFFFFF">
+<%@page 
+import="
+	javax.servlet.*,
+	javax.naming.*,
+	java.sql.*,
+	javax.sql.*,
+	com.bs.common.DBUtil
+	" 
+%>
+<jsp:include page="header.jsp">
+	<jsp:param name="pagetitle" value="Book Store for Dummies"/>
+	<jsp:param name="subtitle" value="subscribe"/>
+</jsp:include>
+
 <%@ taglib uri="/html" prefix="html" %>
 <%@ taglib uri="/bean" prefix="bean" %>
 <center><h2>Subscription Page</h2></center>
@@ -39,5 +46,4 @@
 </html:form>
 
 </table>
-</body>
-</html>
+<jsp:include page="footer.jsp"/>

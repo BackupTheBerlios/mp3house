@@ -3,6 +3,7 @@ language="java"
 session="true"
 errorPage="error.jsp"
 %>
+<%@ taglib uri="/mytags" prefix="mytags" %>
 <html>
 <head>
 	<title>
@@ -14,7 +15,10 @@ errorPage="error.jsp"
 
 <table align="top" width="100%">
 	<tr bgcolor="#E2EFF9">
-		<td><b>Book Store for Dummies</b></td>
+		<td>
+			<b>Book Store for Dummies</b>
+			<mytags:time/>
+		</td>
 		<td align="right">
 			<%= (session.getAttribute("uname")==null)?"":session.getAttribute("uname").toString() %>
 			<%= request.getParameter("subtitle")%>

@@ -28,7 +28,7 @@
 	<target depends="init, compile" name="buildEJB">
 		<jar destfile="C:\bea\user_projects\domains\vkdasari\myserver\upload\BSEJB.jar">
 			<fileset dir="${basedir}/WEB-INF/classes"
-				includes="com/bs/ejb/**">
+				includes="com/bs/ejb/**, com/bs/common/**">
 			</fileset>
 			<fileset dir="${basedir}" includes="META-INF/**">
 			</fileset>

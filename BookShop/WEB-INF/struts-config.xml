@@ -42,6 +42,14 @@
 		<form-bean
 			name="subscribeForm"
 			type="com.bs.forms.SubscribeForm"/>
+			
+		<form-bean type="org.apache.struts.action.DynaActionForm"
+			name="BookDynaForm">
+			<form-property type="java.lang.String" name="bookTitle" />
+			<form-property type="java.lang.String" name="isbn" />
+			<form-property type="java.lang.Integer" name="cost" />
+		</form-bean>
+		
 	</form-beans>
 	
 	<!-- Global Forwards -->
@@ -61,6 +69,17 @@
 			input="/subscribe.jsp">
 			<forward name="successSubscribe" path="/subscribeOk.jsp"/>
 		</action>
+		
+		<action 
+			path="/addbook"
+			type="com.bs.actions.AddBookAction"
+			name="BookDynaForm"
+			scope="request"
+			validate="no"
+			input="/AddBook.jsp">
+			<forward name="successSubscribe" path="/subscribeOk.jsp"/>
+		</action>
+		
 	</action-mappings>
 	
 
