@@ -17,7 +17,7 @@
             </fileset>
         </path>        
     </target>
-
+	
     <target name="compile" depends="init" description="Compiles the source">
     	<mkdir dir="${basedir}/WEB-INF/classes"/>
     	<javac srcdir="${src.home}" destdir="${basedir}/WEB-INF/classes" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}">
