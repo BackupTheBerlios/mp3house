@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BookShop" basedir="." default="all">
+	
+    <target name="init">
+        <property file="build.properties"/>
+        <property name="ejb.home" value="${basedir}/dist"/>
+        <property name="web.home" value="${basedir}/help"/>
+        <property name="src.home" value="${basedir}/src"/>
+                        
+        <property name="compile.debug" value="true"/>
+        <property name="compile.deprecation" value="false"/>
+        <property name="compile.optimize" value="true"/>
+        
+        <path id="compile.classpath">
+            <fileset dir="${basedir}/WEB-INF/lib">
+                <include name="*.jar"/>
+            </fileset>
+        </path>        
+    </target>
+
+    <target name="compile" depends="init" description="Compiles the source">
+    	<mkdir dir="${basedir}/WEB-INF/classes"/>
+    	<javac srcdir="${src.home}" destdir="${basedir}/WEB-INF/classes" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}">
+    		<classpath refid="compile.classpath"/>
+    	</javac>    	
+    </target>
+	
+	<target depends="init, compile" name="buildEJB">
+		<jar destfile="C:\bea\user_projects\domains\vkdasari\myserver\upload\BSEJB.jar">
+			<fileset dir="${basedir}/WEB-INF/classes"
+				includes="com/bs/ejb/**">
+			</fileset>
+			<fileset dir="${basedir}" includes="META-INF/**">
+			</fileset>
+		</jar>
+	</target>
+	
+	<target depends="init, compile" name="buildWeb">
+		<jar destfile="C:\bea\user_projects\domains\vkdasari\myserver\upload\BookStore.war">
+			<fileset dir="${basedir}"
+				excludes="META-INF/**">
+			</fileset>
+		</jar>		
+	</target>
+	
+	<target name="all" description="Clean build and dist directories, then compile"/>
+	
+</project>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE web-app PUBLIC 
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	
+	<!-- Struts Configuration Information -->	
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>
+				application
+			</param-name>
+			<param-value>
+				Resources
+			</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<taglib>
+		<taglib-uri>/bean</taglib-uri>
+		<taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>/tiles</taglib-uri>
+		<taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>/html</taglib-uri>
+		<taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+	</taglib>
+		
+	<taglib>
+		<taglib-uri>/logic</taglib-uri>
+		<taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+	</taglib>
+	
+	<taglib>
+		<taglib-uri>/template</taglib-uri>
+		<taglib-location>/WEB-INF/struts-template.tld</taglib-location>
+	</taglib>
+	
+	<ejb-ref>
+		<ejb-ref-name>ejb/Users</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<home>com.bs.ejb.UsersRemoteHome</home>
+		<remote>com.bs.ejb.UsersRemote</remote>
+		<!-- <ejb-link>com.bs.ejb.UsersBean</ejb-link> -->
+	</ejb-ref>
+	
+</web-app>

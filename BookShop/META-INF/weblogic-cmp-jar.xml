@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE weblogic-rdbms-jar PUBLIC 
+'-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB RDBMS Persistence//EN' 
+'http://www.bea.com/servers/wls810/dtd/weblogic-rdbms20-persistence-810.dtd'>
+<weblogic-rdbms-jar>
+	<weblogic-rdbms-bean>
+		<ejb-name>UsersBean</ejb-name>
+		<data-source-name>mysqljndi</data-source-name>
+		<table-map>
+			<table-name>users</table-name>
+			<field-map>
+				<cmp-field>id</cmp-field>
+				<dbms-column>id</dbms-column>
+			</field-map>
+			<field-map>
+				<cmp-field>userName</cmp-field>
+				<dbms-column>username</dbms-column>
+			</field-map>
+			<field-map>
+				<cmp-field>fullName</cmp-field>
+				<dbms-column>fullname</dbms-column>
+			</field-map>
+			<field-map>
+				<cmp-field>password</cmp-field>
+				<dbms-column>password</dbms-column>
+			</field-map>
+			<field-map>
+				<cmp-field>email</cmp-field>
+				<dbms-column>email</dbms-column>
+			</field-map>												
+		</table-map>
+		<!--
+		<field-group></field-group>
+		<relationship-caching></relationship-caching>
+		<weblogic-query></weblogic-query>
+		<delay-database-insert-until></delay-database-insert-until>
+		<use-select-for-update></use-select-for-update>
+		<lock-order></lock-order>
+		<instance-lock-order></instance-lock-order>
+		-->
+		<automatic-key-generation>
+			<generator-type>NamedSequenceTable</generator-type>
+			<generator-name>seq_users</generator-name>
+			<key-cache-size>10</key-cache-size>
+		</automatic-key-generation>
+		<!--
+		<check-exists-on-method></check-exists-on-method>
+		-->
+	</weblogic-rdbms-bean>
+</weblogic-rdbms-jar>

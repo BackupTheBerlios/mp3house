@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+     "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+     "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	
+	<!-- Datasources -->
+	<!--
+	<data-sources>
+		<data-source type="org.apache.commons.dbcp.BasicDataSource">
+			<set-property
+				property="driverClassName"
+				value="org.gjt.mm.mysql.Driver"/>
+			<set-property
+				property="url"
+				value="jdbc:mysql://localhost:3306/bookstore"/>
+			<set-property
+				property="username"
+				value="vijay" />
+			<set-property
+				property="password"
+				value="krishna" />
+			<set-property
+				property="maxActive"
+				value="10" />
+			<set-property
+				property="maxWait"
+				value="5000" />
+			<set-property
+				property="defaultAutoCommit"
+				value="false" />
+			<set-property
+				property="defaultReadOnly"
+				value="false" />
+		</data-source>
+	</data-sources>
+	-->
+	
+	<!-- ActionForms -->
+	<form-beans>
+		<form-bean
+			name="subscribeForm"
+			type="com.bs.forms.SubscribeForm"/>
+	</form-beans>
+	
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="login" path="/login.jsp"/>
+	</global-forwards>
+
+	
+	<!-- Action Mapping -->
+	<action-mappings>
+		<action 
+			path="/subscribe"
+			type="com.bs.actions.SubscribeAction"
+			name="subscribeForm"
+			scope="request"
+			validate="no"
+			input="/subscribe.jsp">
+			<forward name="successSubscribe" path="/subscribeOk.jsp"/>
+		</action>
+	</action-mappings>
+	
+
+
+</struts-config>
